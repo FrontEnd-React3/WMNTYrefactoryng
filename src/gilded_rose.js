@@ -5,7 +5,6 @@ class Item {
     this.quality = quality;
   }
 }
-
 class Shop {
   constructor(items=[]){
     this.items = items;
