@@ -25,7 +25,14 @@ class Shop {
         : isConcertTicket && soManyDaysToSell <= 10 && soManyDaysToSell > 5 ? salesPrice + 2
         : isConcertTicket && soManyDaysToSell >= 0 ? salesPrice + 3
         : isConcertTicket && soManyDaysToSell < 0 ? salesPrice * 0
+        : isAgedBrie ? salesPrice + 1
+        : isExilir && (this.items[i].quality = salesPrice - 1) && soManyDaysToSell < 0 ? salesPrice - 2
+        : isVest && (this.items[i].quality = salesPrice - 1) && soManyDaysToSell < 0 ? salesPrice - 2
+        : isConjured && (this.items[i].quality = salesPrice - 2) && soManyDaysToSell < 0 ? salesPrice - 4
         : this.items[i].quality;
+
+
+
         this.items[i].quality =
         this.items[i].quality < 0 ? 0
           : (isAgedBrie && (this.items[i].quality = salesPrice + 1)) > 49 ? 50
