@@ -11,7 +11,15 @@ class Shop {
     this.items = items;
   }
   updateQuality() {
-    for (var i = 0; i < this.items.length; i++) {
+    for (let i = 0; i < this.items.length; i++) {
+      let salesPrice = this.items[i].quality;
+      let soManyDaysToSell = this.items[i].sellIn;
+      let isConcertTicket = this.items[i].name.includes("TAFKAL80ETC concert");
+      let isAgedBrie = this.items[i].name.includes("Aged");
+      let isExilir = this.items[i].name.includes("Elixir");
+      let isConjured = this.items[i].name.includes("Conjured");
+      let isVest = this.items[i].name.includes("Dexterity Vest");
+      let isSulfuras = this.items[i].name.includes("Hand of Ragnaros");
       if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
         if (this.items[i].quality > 0) {
           if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
