@@ -29,21 +29,11 @@ class Shop {
         : isVest && (this.items[i].quality = salesPrice - 1) && soManyDaysToSell < 0 ? salesPrice - 2
         : isConjured && (this.items[i].quality = salesPrice - 2) && soManyDaysToSell < 0 ? salesPrice - 4
         : this.items[i].quality;
-        this.items[i].quality =
-        this.items[i].quality < 0 ? 0
+        this.items[i].quality = this.items[i].quality < 0 ? 0
           : (isAgedBrie && (this.items[i].quality = salesPrice + 1)) > 49 ? 50
           : isConcertTicket && this.items[i].quality > 49 ? 50
           : isSulfuras ? (salesPrice = 80)
           : this.items[i].quality;
-          {
-            this.items[i].sellIn = this.items[i].sellIn - 1;
-          }
-    }
-
-    return this.items;
-  }
-}
-module.exports = {
-  Item,
-  Shop
-}
+          {this.items[i].sellIn = this.items[i].sellIn - 1;}}
+    return this.items;}}
+module.exports = {Item, Shop}
